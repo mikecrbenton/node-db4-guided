@@ -12,7 +12,7 @@ module.exports = {
 			directory: "./data/seeds",
 		},
 
-		// this is needed when using foreign keys
+		// ****THIS IS NEEDED IN SQLITE3 TO CREATE FOREIGN KEYS*****
 		pool: {
 			afterCreate: (conn, done) => {
 				// runs after a connection is made to the sqlite engine

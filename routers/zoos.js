@@ -25,6 +25,15 @@ router.get("/zoos/:id", async (req, res, next) => {
 	} catch(err) {
 		next(err)
 	}
+  })
+
+router.get("/zoos/:id/animals", async (req,res,next) => {
+   try{
+      const animals = await Zoo.findZooAnimals(req.params.id)
+      res.json(animals)
+   }catch(err){
+      next(err)
+   }
 })
 
 module.exports = router
